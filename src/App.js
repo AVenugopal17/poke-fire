@@ -29,12 +29,13 @@ class App extends Component {
   }
 
   render() {
-    const myCollection = this.state.myCollection.map(pokemon => {
+    const myCollection = this.state.myCollection.map((pokemon, index) => {
       return (
         <Card
           addToCollection={this.addToCollection}
           removeFromCollection={this.removeFromCollection}
           key={pokemon.id}
+          index={index}
           {...pokemon}
         />
       );
@@ -42,7 +43,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <MyNameComp name="josh" />
+        <MyNameComp name="Aarti" />
         <div className={"my-collection collection"}>{myCollection}</div>
         <ToChoose addToCollection={this.addToCollection} />
       </div>
